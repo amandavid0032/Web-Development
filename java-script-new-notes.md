@@ -1228,4 +1228,5 @@ const f = new Intl.NumberFormat("en-us", {
 })
 
 console.log(f.format(number));          // 11M  (Million)
+//Pending
 ```
