@@ -886,3 +886,34 @@ class Student{
 ?>
 
 ```
+---
+## 📘 Method chaining 
+1. Method chaining is a techiniqe where multiple methoda and function are called in a single statement
+2. Method chaining allows to call several methods on the same object sequentially without having to store the intermediate results in variables
+3. Method chaining method only heppend when its `return this ` in last line  
+```php
+
+class main{
+public function add($a,$b){
+echo "this is add funtion result".$a+$b."<br/>";
+	return $this;   //Call to a member function sub() on nul if this is not return in last line error 
+}
+public function sub($a,$b){
+	echo "this is sub funtion result".$a-$b."<br/>";
+	return $this;
+}
+public function multiple($a,$b){
+	echo "this is multiple funtion result".$a*$b."<br/>";
+	return $this;
+}public function div($a,$b){
+	echo "this is div funtion result".$a-$b."<br/>";
+	return $this;
+}
+}
+$object=new main();
+$object->add(2,3)->sub(5,20)->multiple(5,5)->div(6,3);
+// this is add funtion result5
+// this is sub funtion result-15
+// this is multiple funtion result25
+// this is div funtion result3
+```
