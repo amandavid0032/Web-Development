@@ -614,6 +614,7 @@ $object->hi();   //Fatal error: Trait method G::hi has not been applied as Base:
 1. Use the `insteadof` keyword to resolve the issue of two traits having the same function and method.
 
 **Use bhot traits**
+
 1.If want to use bhot traits then us `as` keyword its change the name of function and use it 
 ```php
 
@@ -651,3 +652,155 @@ $object->hi();
 echo"<br/>";  
 $object->Hello();             // use bhot function and just change thr name of function 
 ```
+***
+```php
+
+trait Getter {
+ 
+    public function hi() {                     
+    echo "hello from getter";
+	}
+
+}
+ trait G{
+	public function hi() {                
+		echo "hello from g";
+		}
+ }
+
+class main{
+	function hi(){                      
+		echo "hello from main";
+	}
+}
+class Base extends main {
+
+    use Getter;
+    use G{
+		// G::hi insteadOf Getter;         //hello from g
+	  Getter::hi insteadOf G;             //hello from getter   
+		G::hi as Hello;                   //hello from g 
+	     
+	}                                 
+}                                 
+ 
+// Create an object of the Base class
+$object = new Base();
+$object->hi();
+echo"<br/>";  
+$object->Hello();             // use bhot function and just change thr name of function 
+
+```
+---
+## 📘 Type Hinting
+1. In simple word, type hinting means providing hints to function to only accept the given data type.
+
+2. In technical word we can say that Type Hinting is method by which we can force function to accept the desired data type.
+
+3. In PHP, we can use type hinting for Object, Array and callable data type.
+
+set php version to  PHP 7.0 or greater than to use this concept;
+
+it is process to send data to any method with acceptable datatype for example
+
+
+***
+```php
+function hello($v){
+ echo $v+1;
+}
+hello("hello");   //Unsupported operand types: string + int
+
+//Done with type hinting 
+function hello(int $v){
+	echo $v+1;
+   }
+   //hello("hello");   //hello(): Argument #1 ($v) must be of type int, string given
+  hello(4);			 // 5
+```
+***
+```php
+function fruits(array $n){
+	foreach($n as $name){
+		echo "$name <br/>";
+	}
+}
+$na=['mango','banana','popaya','grapes'];
+fruits($na);
+```
+***
+```php
+
+class hello{
+	public function sayHello(){
+		echo "Hello every one <br/>";
+	}
+}
+class Bye{
+	public function sayBye(){
+		echo "Bye Everyone <br/>";
+	}
+}
+
+/*
+function wow(hello $c)
+{				
+	
+	$c->sayHello();			gives error becasue we are sending object but the method does not exist in hello class so it will make error
+							Exception works on this concept
+}
+
+
+$objBye=new Bye();
+
+wow($objBye);
+
+*/
+
+function wow(hello $c){
+	$c->sayHello();
+}
+
+$objhello=new hello();
+
+wow($objhello);
+```
+***
+```php
+
+class school{
+	public function getName(student $names){	// receiving object
+		echo '<ul>';
+		foreach($names->names() as $name){		// accessing function from object 
+			echo '<li>'.$name.'</li>';
+		}
+		echo '</ul>';
+	}
+}
+class student{
+	public function names(){
+		return ['Ram','Krishan','Gopal'];
+	}
+}
+
+class library{
+
+}
+$lib=new library();
+$stu=new student();
+$sch=new school();
+
+
+$sch->getName($stu);		// sending object
+```
+---
+## 📘 NameScpace 
+Namespaces are qualifiers that solve two different problems:
+
+1.They allow for better organization by grouping classes that work together to perform a task
+
+2.They allow the same name to be used for more than one class
+
+3. Namespaces are declared at the beginning of a file using the namespace keyword: 
+
+***
