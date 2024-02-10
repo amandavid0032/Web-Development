@@ -804,3 +804,85 @@ Namespaces are qualifiers that solve two different problems:
 3. Namespaces are declared at the beginning of a file using the namespace keyword: 
 
 ***
+![Screenshot (304)](https://github.com/amandavid0032/Web-Development/assets/86879390/e0ca4f2f-45a6-4dde-aab5-0f342ceaa2c8)
+***
+**First.php**
+```Php
+<?php
+
+ require 'second.php';
+ require 'third.php';
+   use test\name\aman\david as cmd;  // also change name of namespacing like this 
+
+
+//  $obj=new se\base(3,6);
+
+ $a=[2,3,"AMan","david=>[4,5,6,7]"];
+ $obj2=new cmd\pro($a);
+
+ class College {
+
+    public $studentName;
+
+    public function setName($name)
+    {
+        $this->studentName=new  cmd\Student();
+        $this->studentName->setName($name);
+    }
+    public function getName(){
+        return $this->studentName->getName();
+    }
+}
+
+$obj = new College();
+
+$obj->setName('Aman');
+
+echo $obj->getName();
+```
+***
+**Second.php**
+```php
+<?php
+namespace se;
+class base{
+    public function __construct($a,$b){
+        echo $a+$b;
+    }
+}
+?>
+```
+***
+**Third.php**
+```php
+<?php
+namespace test\name\aman\david;
+
+//namespace test{};    also write name space like this 
+    class pro{
+        public function __construct($arr){
+    echo "hello third.php file i am ";
+         foreach($arr as $c){
+        echo "<li>$c</li>";
+     }
+    }   
+} 
+    
+class Student{
+
+    public $name;
+
+    public function setName($test='no name')
+    {
+        $this->name=$test;
+    }
+    
+    public function getName()
+    {
+        return $this->name;
+    }
+}
+
+?>
+
+```
