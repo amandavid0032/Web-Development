@@ -925,8 +925,8 @@ Magic methods in PHP are predefined methods that are automatically called in cer
 1. `__destruct()` function, PHP will automatically call this function at the end of the script.
 2.  A destructor is called when the object is destructed or the script is stopped or exited.
     For Example mysqli connetion in the end we close the connetion and then we write mysqli_close() but destructr function automatically run in the end of the sript.
-    ```php
 
+   ```php
 class main
 {
 
@@ -968,4 +968,4 @@ $object->add(2, 3)->sub(5, 20)->multiple(5, 5)->div(6, 3);
 // this is multiple funtion result25
 // this is div funtion result3
 // Object destroyed
-    ```
+ ```
