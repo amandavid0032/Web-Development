@@ -969,3 +969,29 @@ $object->add(2, 3)->sub(5, 20)->multiple(5, 5)->div(6, 3);
 // this is div funtion result3
 // Object destroyed
  ```
+***
+**AutoLoad**
+1.Autoloading is a feature in PHP that enables automatic loading of PHP classes without the need to manually include or require the class files. 
+2.Autoloading is a feature where load soo many file.
+```php
+function __autoload($class){
+    // Construct the path to the class file based on the class name.
+    // In this example, it assumes that the class file is located in a directory named after the class itself.
+	require "$class/".$class.".php";
+}
+$test = new first();  // just example for creating object and its object name or class is in other file
+```
+***
+**Get Method**
+Get method call automatically when attempting to access the undefine properties of an object 
+```php
+// its look like so unprofesional error of the code to resolve this issue use get method
+class main{
+	private $data="aman";
+}
+$test=new main();
+$test->main;  //Undefined property: main::$main 
+```
+```php
+
+```
