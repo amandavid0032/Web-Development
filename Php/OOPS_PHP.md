@@ -917,3 +917,55 @@ $object->add(2,3)->sub(5,20)->multiple(5,5)->div(6,3);
 // this is multiple funtion result25
 // this is div funtion result3
 ```
+## 📘 Magic methods
+Magic methods in PHP are predefined methods that are automatically called in certain situations. They are also known as "special methods"
+![Screenshot (306)](https://github.com/amandavid0032/Web-Development/assets/86879390/ae0e5107-6582-4d10-83c9-6f263b9a9319)
+***
+**Destruct Method**
+1. `__destruct()` function, PHP will automatically call this function at the end of the script.
+2.  A destructor is called when the object is destructed or the script is stopped or exited.
+    For Example mysqli connetion in the end we close the connetion and then we write mysqli_close() but destructr function automatically run in the end of the sript.
+    ```php
+
+class main
+{
+
+	public function __construct()
+	{
+		echo "Object created<br/>";
+	}
+	public function add($a, $b)
+	{
+		echo "this is add funtion result" . $a + $b . "<br/>";
+		return $this;
+	}
+	public function sub($a, $b)
+	{
+		echo "this is sub funtion result" . $a - $b . "<br/>";
+		return $this;
+	}
+	public function multiple($a, $b)
+	{
+		echo "this is multiple funtion result" . $a * $b . "<br/>";
+		return $this;
+	}
+	public function div($a, $b)
+	{
+		echo "this is div funtion result" . $a - $b . "<br/>";
+		return $this;
+	}
+
+	public function __destruct()
+	{
+		echo "Object destroyed\n";
+	}
+}
+$object = new main();
+$object->add(2, 3)->sub(5, 20)->multiple(5, 5)->div(6, 3);
+// Object created
+// this is add funtion result5
+// this is sub funtion result-15
+// this is multiple funtion result25
+// this is div funtion result3
+// Object destroyed
+    ```
