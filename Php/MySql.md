@@ -144,6 +144,55 @@ SELECT * FROM table_name;
 SELECT column1, column2 FROM table_name;
 
 // data with condition 
-
 SELECT column1, column2 FROM table_name WHERE condition; 
+
+// AS
+SELECT id AS i,name AS "Sname" FROM table_name
 ```
+***
+**And**
+
+AND Condition: The AND condition is used to retrieve rows that meet all specified conditions.
+```php
+SELECT column1, column2 FROM table_name WHERE condition1 AND condition2;
+
+SELECT * FROM Employees WHERE department = 'Sales' AND salary > 50000;
+```
+***
+**Or**
+
+OR Condition: The OR condition is used to retrieve rows that meet at least one of the specified conditions.
+```php
+SELECT column1, column2 FROM table_name WHERE condition1 OR condition2;
+
+SELECT * FROM Employees WHERE department = 'Sales' OR department = 'Marketing';
+```
+**In**
+
+IN Condition: The IN condition is used to retrieve rows where a specified column value matches any value in a list.
+```php
+//Sql
+SELECT column1, column2 FROM table_name WHERE column_name IN (value1, value2, ...);
+
+//Example
+SELECT * FROM Employees WHERE department IN (20,19); // it's search data between in this value and give only data which match this condtion
+
+SELECT * FROM Employees WHERE department IN ('Sales', 'Marketing');
+
+```
+***
+**NOT IN**
+
+NOT IN Condition: The NOT IN condition is used to retrieve rows where a specified column value does not match any value in a list.
+```php
+//sql
+SELECT column1, column2 FROM table_name WHERE column_name NOT IN (value1, value2, ...);
+
+//Example
+SELECT * FROM Employees WHERE department NOT IN ('Sales', 'Marketing');
+
+
+SELECT * FROM Employees WHERE department NOT IN (20,19); // it's don't show data which meet this conditon
+```
+---
+## 
