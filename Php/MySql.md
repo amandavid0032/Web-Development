@@ -101,4 +101,49 @@ INSERT INTO Table_name
 VALUES (2, 'Jane Smith', '1985-09-20', '987-654-3210');
 
 ```
+***
+**Inserting Multiple value**
+```php
+INSERT INTO Table_name (column_name1, column_name2, column_name3)
+VALUES 
+(value1_row1, value2_row1, value3_row1),
+(value1_row2, value2_row2, value3_row2),
+(value1_row3, value2_row3, value3_row3);
+
+// With table
+INSERT INTO Table_name (id, name, birth_date)
+VALUES 
+(3, 'Alice Johnson', '1988-12-10'),
+(4, 'Bob Brown', '1995-07-25'),
+(5, 'Emily Davis', '1992-03-18');
+
+```
 ---
+## 📘 Constraints
+Constraints in databases are rules or conditions applied to a table column or a group of columns.It's help to data don't come empty or what condtion is on data itss work on that base 
+![Screenshot (311)](https://github.com/amandavid0032/Web-Development/assets/86879390/1ead4c19-5524-4be1-be94-a28daf15c44c)
+***
+**Example**
+```php
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+    email VARCHAR(100) UNIQUE
+);
+```
+## 📘 Select 
+Select query always gives result in the form of result set 
+	
+Select is use to Display Data
+```php
+// Slelct all the data
+SELECT * FROM table_name;
+
+// Without condtion or choose spcific data 
+SELECT column1, column2 FROM table_name;
+
+// data with condition 
+
+SELECT column1, column2 FROM table_name WHERE condition; 
+```
