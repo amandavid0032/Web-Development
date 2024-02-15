@@ -150,6 +150,13 @@ SELECT column1, column2 FROM table_name WHERE condition;
 SELECT id AS i,name AS "Sname" FROM table_name
 ```
 ***
+**DISTINCT**
+In SQL, the DISTINCT keyword is used in the SELECT statement to return only unique values in the result set. It removes duplicate rows from the output
+```php
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+```
+***
 **And**
 
 AND Condition: The AND condition is used to retrieve rows that meet all specified conditions.
@@ -434,3 +441,34 @@ FROM employees
 GROUP BY department
 HAVING AVG(salary) > 50000;
 ```
+## 📘 Subquery
+**PENDING CONCEPT UNDERSTAND**
+A subquery, also known as a nested query or inner query, is a query nested within another SQL query. It allows you to use the result of one query as a part of another query
+```php
+SELECT city, student_id
+FROM city_record 
+WHERE student_id = (SELECT id FROM studentrecord WHERE id = 218) LIMIT 25;
+```
+---
+## 📘 UNION & UNION ALL
+**UNION**
+1.Each Select Statement within union must have the same number of columns
+
+2.The Columns must also have similar data type
+
+3.The columns in each select statement must also  be in same oder 
+
+4.It removes duplicate rows from the final result set. If there are duplicate rows between the result sets of the SELECT statements, only one copy of the duplicate rows is included in the final result
+```php
+SELECT column1, column2 FROM table1                  //if column1 dtatype is int and column2 datatype is varchar so table 2 also have same oder and also data type same in oder
+UNION
+SELECT column1, column2 FROM table2;
+```
+**UNION ALL**
+1.just one difference in it it's show duplicate also 
+```php
+SELECT column1, column2 FROM table1
+UNION ALL
+SELECT column1, column2 FROM table2;
+```
+----
