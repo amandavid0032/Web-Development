@@ -306,4 +306,103 @@ SELECT COUNT(*)FROM table_name WHERE condition;
 SELECT MIN(column_name)FROM table_name WHERE condition;
 ```
 ---
-## 
+## 📘 UPDATE
+```php
+UPDATE table_name SET column1 = value1, column2 = value2, WHERE condition;
+```
+***
+**ROLLBACK and Commit**
+a. by default in database commit is enable. 
+
+b. Commit means Save all the changes 
+
+c. commit and role back only works on insert, update, delete
+```php
+SELECT * FROM `studentrecord` ;
+COMMIT;
+ UPDATE studentrecord SET f_name='himinshu' WHERE id=172;
+ROLLBACK;
+```
+---
+## 📘 DELETE
+
+In SQL, the DELETE statement is used to remove one or more rows from a table.
+```php
+DELETE FROM table_name WHERE condition;
+```
+---
+## 📘 PRIMARY KEY & FOREIGEN KEY
+**PRIMARY KEY**
+1.A PRIMARY KEY always has uniquely identifies and data.
+
+2.It ensures that each row in the table is uniquely identifiable and that there are no duplicate values in the specified column(s).
+
+3.By default, a PRIMARY KEY constraint also enforces the NOT NULL constraint, meaning that the values in the specified column(s) cannot be NULL.
+
+4.In most database systems, each table should have a PRIMARY KEY defined to uniquely identify each row.
+
+```php
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+```
+***
+**FOREIGEN KEY**
+1.A Foreigen key is key used to link two tables together.
+
+2.A foreigen key in one table used to point primary key in another table
+```php
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+```
+---
+## 📘 JOIN
+In SQL, a JOIN operation is used to combine rows from two or more tables based on a related column between them. This related column typically represents a foreign key relationship between the tables.
+1. Inner Join
+2. Left Join (left outer join)
+3. Right Join
+4. Self Join 
+5. Full Outer Join(union operator)
+***
+**INNER JOIN**
+ INNER JOIN is a type of SQL join that retrieves records from two or more tables based on a related column or columns between them. It returns only the rows that have matching values in both tables according to the specified join condition
+ ```php
+SELECT columns FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+```
+***
+**Left Join**
+In SQL, a JOIN operation is used to combine rows from two or more tables based on a related column between them. This related column typically represents a foreign key relationship between the tables.
+and it's match the data and if data is not match give an empty value there 
+```php
+SELECT * FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+
+
+//Example
+SELECT * FROM studentrecord LEFT JOIN   city_record  ON studentrecord.id=city_record.student_id 
+```
+![Screenshot (316)](https://github.com/amandavid0032/Web-Development/assets/86879390/e34c88b6-4f95-4808-a69d-70fe9eeb189b)
+***
+**Right Join**
+right join return all records  from the right table(table2) and matched records from the left table(table1).
+```php
+SELECT * FROM table1 RIGHT JOIN table2 ON table1.column = table2.column;
+
+//Example
+SELECT * FROM studentrecord Right JOIN city_record ON studentrecord.id=city_record.student_id;
+```
+![Screenshot (317)](https://github.com/amandavid0032/Web-Development/assets/86879390/c477bf96-c09f-426f-ac3b-2d8bac20dd59)
+
+***
+**Cross Join**
+A CROSS JOIN is a type of SQL join that combines each row from the first table with each row from the second table, resulting in a Cartesian product of the two tables. In other words, it returns all possible combinations of rows between the two tables.
+```php
+SELECT columns FROM table1 CROSS JOIN table2;	
+```
+![Screenshot (319)](https://github.com/amandavid0032/Web-Development/assets/86879390/e79eb2b9-6893-4474-9ce7-383fe951f7a9)
+---
