@@ -194,5 +194,116 @@ SELECT * FROM Employees WHERE department NOT IN ('Sales', 'Marketing');
 
 SELECT * FROM Employees WHERE department NOT IN (20,19); // it's don't show data which meet this conditon
 ```
+***
+**Between**
+
+BETWEEN: This operator selects values within a specified range, including the endpoints.
+```php
+SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2;
+
+//Example
+SELECT * FROM products WHERE price BETWEEN 10 AND 50;
+```
+***
+**Not Between**
+
+NOT BETWEEN: This operator selects values outside a specified range.
+```php
+SELECT column_name(s) FROM table_name WHERE column_name NOT BETWEEN value1 AND value2;
+
+//Example
+SELECT *FROM employees WHERE age NOT BETWEEN 25 AND 40;
+
+```
+***
+**Like**
+1.The term "like" in SQL is used in a word used to connect sentences or to coordinate words in the same clause (e.g. and, but, if). with the WHERE clause to search for a specified pattern within a column.
+
+2.like is commonly used to select data based on patterns 
+
+3.Like operator is often used in the where clause of the Select Statment
+
+4.Like operator in the right way is essential to increse the query performance 
+
+**wildCard Characters** 
+
+a. % (Percentage sign)-> % wildcard allows you to match any string of zero or more characters 
+
+b. _ (Underscore)-> 	_ wildcard allows you to match any single charcter
+***
+![Screenshot (314)](https://github.com/amandavid0032/Web-Development/assets/86879390/4aa8a09b-d5ec-4a1f-99bc-ec99ee590d7f)
+***
+```php
+SELECT column1, column2 FROM table_name WHERE column_name LIKE pattern;
+
+//Example
+SELECT * FROM tableName where name LIKE 's%' ==> Select those chracter which start with s letters after that select all 
+
+SELECT * FROM tableName where name NOT  LIKE 's%'
+
+SELECT * FROM tableName where BINARY name LIKE 's%' (to make case-sensitivity)
+
+```
+***
+**Regular Expression**
+1.It is advance over like query for search
+2.In SQL, regular expressions are used to perform more complex pattern matching operations on strings. However, not all database systems support regular expressions directly in SQL queries. 
+***
+![Screenshot (315)](https://github.com/amandavid0032/Web-Development/assets/86879390/0b35799d-2456-4e92-a913-196ea41b808b)
+***
+```php
+SELECT * FROM table_name WHERE column_name REGEXP 'pattern';
+
+//Exmple
+SELECT * FROM products WHERE product_name REGEXP '^[A].*'; // check the latter in the begining of the name
+```
+***
+**ORDER BY**
+
+order sql query is use t set show a data in assending or desending oder by dafault it is always assending order
+```php
+SELECT column1, column2, OR * (For Select all the table)FROM table_name ORDER BY column1 ASC;
+
+//Desc
+SELECT *FROM employees ORDER BY  first_name dsc;
+
+```
+***
+**LIMIT & OFFSET**
+ The LIMIT and OFFSET clauses are used together to control the number of rows returned by a query and to specify a starting point for the result set.
+
+Here's how they work:
+
+LIMIT: Specifies the maximum number of rows to return in the result set.
+
+OFFSET: Specifies the number of rows to skip before starting to return rows in the result set.
+
+```php
+SELECT * FROM table_name LIMIT number_of_rows OFFSET offset_value;
+
+//Example
+SELECT * FROM table_name LIMIT 5(offset),3(limit);
+SELECT * FROM table_name LIMIT 5,3;
+```
+***
+**SUM-MAX-MIN-COUNT**
+
+In SQL, you can use aggregate functions like SUM, MAX, COUNT, and MIN to perform calculations on a set of values meeting certain conditions. These functions are often used in combination with the WHERE clause to specify the conditions for the calculation
+**SUM:** Calculates the sum of the values in a column that meet the specified condition.
+```php
+SELECT SUM(column_name) FROM table_name WHERE condition;
+```
+**MAX:** Retrieves the maximum value from a column that satisfies the given condition.
+```php
+SELECT MAX(column_name)FROM table_name WHERE condition;
+```
+**COUNT:** Counts the number of rows that meet the specified condition.
+```php
+SELECT COUNT(*)FROM table_name WHERE condition;
+```
+**MIN:** Retrieves the minimum value from a column that satisfies the provided condition.
+```php
+SELECT MIN(column_name)FROM table_name WHERE condition;
+```
 ---
 ## 
