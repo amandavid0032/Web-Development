@@ -405,4 +405,32 @@ A CROSS JOIN is a type of SQL join that combines each row from the first table w
 SELECT columns FROM table1 CROSS JOIN table2;	
 ```
 ![Screenshot (319)](https://github.com/amandavid0032/Web-Development/assets/86879390/e79eb2b9-6893-4474-9ce7-383fe951f7a9)
+***
+**Multiple Join:** You can join multiple tables in a single SQL query by using multiple JOIN clauses. Here's the basic syntax for joining multiple tables:
+```php
+SELECT *
+FROM table1 INNER JOIN table2 ON table1.column = table2.column INNER JOIN table3 ON table1.column = table3.column;
+```
 ---
+## 📘 Group By & Having clause
+**1.GROUP BY:**
+
+1.The GROUP BY clause is used to group rows that have the same values into summary rows, typically to perform aggregate functions like SUM, COUNT, AVG, etc., on each group.
+
+2.It is often used in conjunction with aggregate functions to group the result set based on one or more columns.
+```php
+SELECT department, COUNT(*) AS num_employees
+FROM employees
+GROUP BY department;    //make a group of same condtion 
+```
+**2.HAVING:**
+
+1.The HAVING clause is used to filter the rows that appear in a GROUP BY clause based on specified conditions.
+
+2.It is similar to the WHERE clause, but while the WHERE clause filters individual rows before the grouping occurs, the HAVING clause filters groups of rows after the grouping occurs.
+```php
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 50000;
+```
