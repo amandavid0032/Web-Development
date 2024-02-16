@@ -313,3 +313,36 @@ echo "<br>";//Output <a href="http://localhost/pratice/pratice.php">
 echo html_entity_decode($str, ENT_NOQUOTES); // Does not convert any quotes
 echo"<br>";//Output <a href=&quot;http://localhost/pratice/pratice.php&quot;>
 ```
+---
+## 📘 Md5 & Sha1
+**Md5**
+1.MD5 is a widely used cryptographic hash function that produces a 128-bit (16-byte) hash value, typically expressed as a 32-character hexadecimal number.
+
+2.It takes an input (or message) and produces a fixed-size output hash value.
+
+3.Its save from hacker because it's value is in the hash value and don't read 
+
+4.It's Default vaule is false in 32 hex number
+ ![Screenshot (322)](https://github.com/amandavid0032/Web-Development/assets/86879390/264d9d73-dcda-4af0-9941-780c6278dfa1)
+***
+```php
+$input = "Hello World";
+$md5_hash = md5($input);
+echo "MD5 hash of '$input': $md5_hash";  //output MD5 hash of 'Hello World': b10a8db164e0754105b7a99be72e3fe5
+
+```
+***
+**SHA 1**
+1. SHA-1 is a cryptographic hash function that produces a 160-bit (20-byte) hash value, typically expressed as a 40-character hexadecimal number.
+
+2.Like MD5, it takes an input and produces a fixed-size output hash value.
+
+3.SHA-1 was widely used, but it is now considered to be vulnerable to collision attacks and is no longer recommended for cryptographic purposes.
+![Screenshot (323)](https://github.com/amandavid0032/Web-Development/assets/86879390/4813c499-4f8c-4dc3-a89c-0cf789daef37)
+```php
+$input = "Hello World";
+$sha1_hash = sha1($input);
+echo "SHA-1 hash of '$input': $sha1_hash"; //output SHA-1 hash of 'Hello World': 0a4d55a8d778e5022fab701977c5d840bbc486d0
+```
+---
+## 📘 
