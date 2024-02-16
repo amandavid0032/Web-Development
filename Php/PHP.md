@@ -345,4 +345,19 @@ $sha1_hash = sha1($input);
 echo "SHA-1 hash of '$input': $sha1_hash"; //output SHA-1 hash of 'Hello World': 0a4d55a8d778e5022fab701977c5d840bbc486d0
 ```
 ---
-## 📘 
+## 📘 Convert_uuencode & Convert_uudecode  
+same work as md5 but there is one diffrence in this it has no limit means md5 give hash value in 32 bite but its has  more then 32 bite
+** Convert_uuencode**
+```php
+$original_data = 'Aman';
+$encoded_data = convert_uuencode($original_data);
+echo "Encoded data: $encoded_data";  //output-Encoded data: %06UA;BX` `
+```
+***
+**Convert_uudecode**
+```php
+$encoded_data = '0=&5S=`8`';
+$decoded_data = convert_uudecode($encoded_data);
+echo "Decoded data: $decoded_data";
+
+```
