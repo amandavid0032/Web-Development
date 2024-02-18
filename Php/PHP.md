@@ -345,7 +345,8 @@ $sha1_hash = sha1($input);
 echo "SHA-1 hash of '$input': $sha1_hash"; //output SHA-1 hash of 'Hello World': 0a4d55a8d778e5022fab701977c5d840bbc486d0
 ```
 ---
-## 📘 Convert_uuencode & Convert_uudecode  
+## 📘 More Function like Md5 
+**Convert_uuencode**  
 same work as md5 but there is one diffrence in this it has no limit means md5 give hash value in 32 bite but its has  more then 32 bite
 ** Convert_uuencode**
 ```php
@@ -361,3 +362,9 @@ $decoded_data = convert_uudecode($encoded_data);
 echo "Decoded data: $decoded_data";
 
 ```
+***
+**bin2hex:**
+This function converts binary data to its hexadecimal representation. In other words, it takes a sequence of binary digits (0s and 1s) and converts them into their equivalent hexadecimal digits (0-9, A-F). 
+
+Syntax
+`echo bin2hex("My first PHP script!");`
