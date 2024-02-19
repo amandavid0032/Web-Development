@@ -1508,4 +1508,17 @@ Dependency injection is achieved in PHP by passing the required dependencies (us
 In more complex PHP applications, you might use Dependency Injection Containers (DICs) or Dependency Injection Frameworks to manage the instantiation and injection of dependencies. Popular DI containers in PHP include Symfony's DependencyInjection component, Pimple, and Laravel's service container.
 
 In summary, dependency injection is a design pattern that promotes loosely coupled, maintainable code by injecting dependencies into classes rather than having them create their own dependencies. It adheres to principles like Dependency Inversion and Single Responsibility, making it an essential concept in modern PHP development.
+
 ---
+## MYSQL Question
+```php
+//1. new hire list example last two month haire list     SELECT * FROM emp_dep  WHERE Hire_date >= DATE_SUB('2024-04-01', INTERVAL 2 MONTH) AND Hire_date < '2024-08-01'; 
+//2. update depertmanet                                   
+//3. emplyo count                                        SELECT COUNT(id) FROM emp_dep 
+//4. avg salary per deperetment                          SELECT dep_id, AVG(Salary) FROM emp_dep GROUP BY dep_id; 
+//5. employ with deperetment                             SELECT * FROM emp_dep INNER JOIN dep WHERE emp_dep.dep_id=dep.id 
+//6. 1 employ 10% salary incress                         SELECT F_name,Salary,Salary * 1.10 AS salary_with_increment FROM emp_dep;
+//7. deperemtnet with most employ                        SELECT dep_id, COUNT(*) FROM emp_dep GROUP BY dep_id
+//8. sum  of anumal salary                               SELECT F_name,  SUM(Salary),SUM(Salary*12) AS PER_YEAR FROM emp_dep GROUP BY F_name
+   
+```
