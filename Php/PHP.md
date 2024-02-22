@@ -409,7 +409,32 @@ if (key_exists('hi', $array)) {
 ```
 ***
 **key_exist** work as same of `array_key_exist`
-## Pendiiig from here 
+***
+**Array Diff & udiff**
+**array_diff:** the difference between arrays, i.e., it returns an array containing all the values from array1 that are not present in any of the other arrays. and return how don't present in array 2 
+```php
+$array1 = array('aman', 'david', 'hi');
+$array2 = array('aman', 'hello', 'hi');
+$difference = array_diff($array1, $array2);
+print_r($difference); // Output: Array ( [1] => david )
+```
+***
+**udiff** user define function its need 3 parameter 2 array for compare and 1 function
+***
+**array_values:**
+ This function returns all the values of an array and re-indexes the array numerically, starting from zero. It effectively removes the keys and preserves only the values.
+```php
+$array = array('a' => "AMAN", 'b' => "David", 'c' => "AAAA");
+$values = array_values($array);
+print_r($values); // Output:Array ( [0] => AMAN [1] => David [2] => AAAA )
+```
+***
+**array_unique:** This function removes duplicate values from an array, preserving the keys of the original array.
+```php
+$array = array('a' => "AMAN", 'b' => "David", 'c' => "AAAA",'d'=>"AMAN",'E'=>"AMAN");
+$values = array_unique($array);
+print_r($values); // Output:Array ( [a] => AMAN [b] => David [c] => AAAA )
+```
 
 ---
 
