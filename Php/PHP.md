@@ -220,6 +220,7 @@ $food = ["Banana",
   "veggi"=>array('carrot','pea','tea')];
 echo count($food,1);// output 10 Give all the totall array include inner rray also adding 1 parameter 
 ```
+***
 **Size of**
 ```Php
 $food=["Banana","1"=>"Orange","true"=>"Apple"];
@@ -232,6 +233,7 @@ $food = ["Banana",
   "veggi"=>array('carrot','pea','tea')];
 echo Sizeof($food,1);// output 10 Give all the totall array include inner rray also adding 1 parameter 
 ```
+***
 **array_count_values**
 * In PHP, the array_count_values function is used to count the occurrences of each unique value in an array. It takes an array as input and returns an associative array where the keys are the unique values from the input array, and the values are the counts of each unique value.
 ```Php
@@ -248,6 +250,7 @@ echo "<pre/>";
 //     [orange] => 1
 // )  //Also count how many times values or array repeat
 ```
+***
 **in_array**
 * in_array is used to check whether a specific value exists in an array.
 * It returns true if the value is found, and false otherwise.
@@ -273,8 +276,143 @@ if ($key !== false) {
 } // output Found at index: 1
 
 ```
-**Pending Array and string method all done later **
+***
+
+**Array_replace & Array_replace_recursive**
+![Screenshot (326)](https://github.com/amandavid0032/Web-Development/assets/86879390/9beaadff-94fd-4e9c-88bc-a7554edc879c)
+***
+**Array_replace**
+This function replaces the values of the first array with the values from the given arrays. If a key exists in the first array, its value will be replaced by the corresponding value from the next array. If the key doesn't exist in the first array, it will be created. This function operates in a non-recursive manner, meaning it does not recursively replace elements in nested arrays.
+```php
+$array1 = array('a', 'b', 'c');
+$array2 = array(0 => 'x', 2 => 'y');
+$result = array_replace($array1, $array2);
+print_r($result); // Output: Array ( [0] => x [1] => b [2] => y )
+print_r($array1);//Output:Array ( [0] => a [1] => b [2] => c )
+```
+***
+**Array_replace_recursive**
+Work with Mulitdeminsonal
+```php
+$array1 = array('a', 'b', array('c', 'd'));
+$array2 = array(0 => 'x', 2 => array(0 => 'y'));
+$result = array_replace_recursive($array1, $array2);
+print_r($result); // Output: Array ( [0] => x [1] => b [2] => Array ( [0] => y [1] => d ) )
+```
+***
+**Array_pop**
+ Pop refers to the operation of removing the last element from an array or stack and returning it and mutate the array
+```php
+$my_list = [1, 2, 3, 4, 5];
+$popped_element = array_pop($my_list);
+echo $popped_element."</br>";   //output:5
+print_r($my_list); //output:Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )
+```
+***
+**Array_push**
+Push is the operation of adding an element to the end of an array or stack. This operation increases the size of the array or stack by one
+```php
+$myArray = array(1, 2, 3); // Output:Array ( [0] => 1 [1] => 2 [2] => 3 )
+print_r($myArray);
+array_push($myArray, 4);
+print_r($myArray);  // Output: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )
+```
+***
+**Array_shift**
+This function removes the first element from an array and returns it. The remaining elements in the array are reindexed sequentially, starting from zero
+```php
+$myArray = array(1, 2, 3, 4, 5);
+$shiftedElement = array_shift($myArray);
+echo $shiftedElement; // Output: 1
+print_r($myArray);    // Output: Array ( [0] => 2 [1] => 3 [2] => 4 [3] => 5 )
+```
+***
+**Array_unshift**
+This function adds one or more elements to the beginning of an array. The existing elements shift to higher indices to accommodate the new elements.
+```php
+$myArray = array(2, 3, 4, 5);
+array_unshift($myArray, 1);
+print_r($myArray); // Output: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 )
+```
+***
+**array_merge:** 
+This function merges two or more arrays into a single array. It appends the elements of the second array to the first array. If there are duplicate keys, the later value will overwrite the previous one.
+```php
+$array1 = array('a', 'b', 'c');
+$array2 = array('d', 'e', 'f');
+$mergedArray = array_merge($array1, $array2);
+print_r($mergedArray); // Output: Array ( [0] => a [1] => b [2] => c [3] => d [4] => e [5] => f )
+```
+***
+**array_combine:**
+This function creates an array by using one array for keys and another for its corresponding values. Both arrays must have the same number of elements, otherwise, an error will occur.
+```php
+$keys = array('a', 'b', 'c');
+$values = array(1, 2, 3);
+$combinedArray = array_combine($keys, $values);
+print_r($combinedArray); // Output: Array ( [a] => 1 [b] => 2 [c] => 3 )
+```
+***
+**Array_slice**
+In PHP, array_slice is a function used to extract a slice of an array. It returns a portion of the original array, starting from the specified offset and containing the specified length of elements.
+mean i want to creat new array from specific value from remaning value
+`array_slice(array $arrayname, int $offset, ?int $length = null, bool $preserve_keys = false): array`
+```php
+$array = array('a', 'b', 'c', 'd', 'e');
+$slice1 = array_slice($array, 2); // Extract elements from index 2 to the end
+print_r($slice1); // Output: Array ( [0] => c [1] => d [2] => e )
+
+$slice2 = array_slice($array, 1, 2); // Extract 2 elements starting from index 1
+print_r($slice2); // Output: Array ( [0] => b [1] => c )
+
+$slice3 = array_slice($array, -2, 2); // Extract 2 elements starting from the second-to-last element
+print_r($slice3); // Output: Array ( [0] => d [1] => e )
+```
+***
+**Array_splice**
+In PHP, array_splice is a function used to remove a portion of an array and replace it with new elements. This function can also be used to insert new elements into an array at a specified position.
+```php
+$array = ['a', 'b', 'c', 'd', 'e'];
+$removed = array_splice($array, 2); // Remove elements starting from index 2 to the end
+print_r($array); // Output: Array ( [0] => a [1] => b )
+
+$array = ['a', 'b', 'c', 'd', 'e'];
+$removed = array_splice($array, 1, 2); // Remove 2 elements starting from index 1
+print_r($array); // Output: Array ( [0] => a [1] => d [2] => e )
+print_r($removed); // Output: Array ( [0] => b [1] => c )
+
+$array = ['a', 'b', 'c', 'd', 'e'];
+$removed = array_splice($array, 2, 1, ['x', 'y']); // Remove 1 element starting from index 2 and replace with 'x' and 'y'
+print_r($array); // Output: Array ( [0] => a [1] => b [2] => x [3] => y [4] => d [5] => e )
+print_r($removed); // Output: Array ( [0] => c )
+```
+***
+**Array Key Function**
+**Array_key:**
+This function returns all the keys of an array or the subset of keys of an array that match a specified value.
+```php
+$array = array('aman' => "Aman", 'david' => "david", 'hello' => 3, 'hi' => 2);
+$keys = array_keys($array);
+print_r($keys); // Output: Array ( [0] => aman [1] => david [2] => hello [3] => hi )
+```
+***
+**Array_key_exist**
+This function checks if a specified key exists in an array.
+```php
+$array = array('aman' => "Aman", 'david' => "david", 'hello' => 3, 'hi' => 2);
+
+if (key_exists('hi', $array)) {
+    echo 'Key "hi" exists';
+} else {
+    echo 'Key "hi" does not exist';
+}
+```
+***
+**key_exist** work as same of `array_key_exist`
+## Pendiiig from here 
+
 ---
+
 ## 📘 Htmlentities
 * PHP function used for converting special characters to their HTML entities. This is particularly useful when you want to display user-input data on a 
   webpage and avoid potential security And Protect From the hacker they can't use Sql injection on this such as Cross-Site Scripting (XSS).By converting special characters to their HTML entities<br/>
@@ -368,3 +506,30 @@ This function converts binary data to its hexadecimal representation. In other w
 
 Syntax
 `echo bin2hex("My first PHP script!");`
+
+`echo hexbin2('$value');`
+***
+**Chr:** BASIC, "Chr" typically stands for "character." often used as a function or command to convert a numeric ASCII or Unicode value into its corresponding character.and it's convert each character into numeric 
+![ASCII-Code](https://github.com/amandavid0032/Web-Development/assets/86879390/e2d4f55a-512d-49fd-8817-dde66ee5eb84)
+***
+`$a=chr(97);
+
+echo $a; //output a`
+***
+**Ord :** the ord() function returns the Unicode code point for a given character. So ord('A') would return 65, the Unicode code point for the character "A."
+`$a=ord("Aman");
+
+echo $a; //output 65`
+
+---
+## 📘 Date & Time Function
+![Screenshot (324)](https://github.com/amandavid0032/Web-Development/assets/86879390/4aca8a9d-bc62-46b2-86d0-58efd81cfbad)
+```php
+$date = date("Y-m-d H:i:s"); // Retrieves current date and time in the format "YYYY-MM-DD HH:MM:SS"
+echo $date;
+```
+***
+![Screenshot (325)](https://github.com/amandavid0032/Web-Development/assets/86879390/e2c045ec-840d-42fa-8ec2-fe3993ce9816)
+***
+---
+## 📘 
