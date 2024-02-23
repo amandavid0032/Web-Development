@@ -435,9 +435,252 @@ $array = array('a' => "AMAN", 'b' => "David", 'c' => "AAAA",'d'=>"AMAN",'E'=>"AM
 $values = array_unique($array);
 print_r($values); // Output:Array ( [a] => AMAN [b] => David [c] => AAAA )
 ```
+***
+**array_chunk():** This function splits an array into chunks(pair) of specified size. It returns a multidimensional array containing chunks of the original array.
+```php
+$numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+$chunks = array_chunk($numbers, 3);
+echo "<pre>";
+print_r($chunks); 
+echo "</pre>";
+/* output
+(
+    [0] => Array
+        (
+            [0] => 1
+            [1] => 2
+            [2] => 3
+        )
 
+    [1] => Array
+        (
+            [0] => 4
+            [1] => 5
+            [2] => 6
+        )
+
+    [2] => Array
+        (
+            [0] => 7
+            [1] => 8
+            [2] => 9
+        )
+
+)*/
+```
+***
+**Array_column:** This function extracts a single column from a multi-dimensional array. It returns an array containing the values of a single column from the input array, identified by the column key or index.
+```php
+$users = [
+    ['id' => 1, 'name' => 'John', 'age' => 30],
+    ['id' => 2, 'name' => 'Jane', 'age' => 25],
+    ['id' => 3, 'name' => 'Doe', 'age' => 40]
+];
+$names = array_column($users, 'name');
+print_r($names); // Output: Array ( [0] => John [1] => Jane [2] => Doe )
+```
+***
+**array_flip :** This function flip the key with value This function exchanges the keys with their associated values in an array.
+```php
+$colors = ["red" => "Aman", "green" => "David", "blue" => "22"];
+$flippedColors = array_flip($colors);
+print_r($flippedColors);
+// Output: Array ( [Aman] => red [David] => green [22] => blue )
+```
+***
+**array_change_key_case() :** This function changes all keys in an array to either uppercase or lowercase. By default, it changes keys to lowercase
+```php
+$inputArray = ["Name" => "John", "Age" => 30];
+$lowercaseKeys = array_change_key_case($inputArray,CASE_LOWER);
+print_r($lowercaseKeys);
+// Output: with CASE_UPPER  Array ( [NAME] => John [AGE] => 30 )
+// Output: with CASE_LOWER  Array ( [name] => John [age] => 30 )
+```
+***
+**array_sum():** This function calculates the sum of all the values in an array.
+```php
+$numbers = [1, 2, 3, 4, 5];
+$sum = array_sum($numbers);
+echo $sum; // Output: 15 (1 + 2 + 3 + 4 + 5)
+```
+***
+**array_product():**  This function calculates the product of all the values in an array.
+```php
+$numbers = [1, 2, 3, 4, 5];
+$product = array_product($numbers);
+echo $product; // Output: 120 (1 * 2 * 3 * 4 * 5)
+```
+***
+**array_rand() :** This function is used to select one or more random keys from an array. It returns either a single random key or an array of random keys, depending on the specified count parameter.
+```php
+$colors = ['red', 'green', 'blue', 'yellow', 'orange'];
+$randomKeys = array_rand($colors, 2);
+foreach ($randomKeys as $key) {
+    echo $colors[$key] . "\n"; // Output: (random 2 colors)
+}
+```
+***
+```php
+$colors = ['red', 'green', 'blue', 'yellow', 'orange'];
+$randomKey = array_rand($colors);
+echo $colors[$randomKey]; // Output: (random color)
+```
+***
+**shuffle():** This function shuffles (randomly reorders) the elements of an array. It modifies the original array.
+```php
+$numbers = [1, 2, 3, 4, 5];
+shuffle($numbers);
+print_r($numbers); // Output: (randomly shuffled array)
+```
+***
+**array_walk():** This function applies a user-defined function to each element of an array. It operates on the array in place, meaning it modifies the original array.
+it's run with function means like a loop and print all the array
+```php
+$numbers = [1, 2, 3, 4, 5];
+
+// Callback function
+function square(&$value, $key) {
+    $value = $value * $value;
+}
+array_walk($numbers, 'square');
+print_r($numbers); // Output: [1, 4, 9, 16, 25]
+```
+***
+**array_walk_recursive():** This function applies a user-defined function recursively to every element of an array. It is useful when you have multi-dimensional arrays and want to apply a function to each element, even if it's nested within sub-arrays.
+```php
+$data = [
+    'numbers' => [1, 2, 3],
+    'letters' => ['a', 'b', 'c']
+];
+
+// Callback function
+function addPrefix(&$value, $key) {
+    $value = 'prefix_' . $value;
+}
+
+array_walk_recursive($data, 'addPrefix');
+
+print_r($data);
+/*
+Output:
+[
+    'numbers' => ['prefix_1', 'prefix_2', 'prefix_3'],
+    'letters' => ['prefix_a', 'prefix_b', 'prefix_c']
+]
+*/
+
+```
+***
+```php
+$colors = ['red', 'green', 'blue', 'yellow', 'orange'];
+$a = [
+    $colors,
+    1 => "Aman",
+    2 => "David",
+    3 => "Hello"
+];
+
+array_walk_recursive($a, "myfunction");
+
+function myfunction($value, $key) {
+    echo "$key $value.<br/>";
+}
+/*
+0 red.
+1 green.
+2 blue.
+3 yellow.
+4 orange.
+1 Aman.
+2 David.
+3 Hello.
+*/
+```
+***
+**array_map() :** is a function used to apply a given callback function to each element of an array and return a new array containing the results.
+```php
+// Define a callback function
+function square($n) {
+    return $n * $n;
+}
+// Define an array
+$numbers = [1, 2, 3, 4, 5];
+// Apply the callback function to each element of the array
+$squaredNumbers = array_map('square', $numbers);
+// Output the result
+print_r($squaredNumbers); // Output: [1, 4, 9, 16, 25]
+```
+***
+**array_reduce():** is a function used to iteratively reduce the elements of an array to a single value using a callback function. and convert in single string and return new array
+```php
+// Define a callback function
+function sum($carry, $item) {
+    $carry += $item;
+    return $carry;
+}
+// Define an array
+$numbers = [1, 2, 3, 4, 5];
+// Apply the callback function to reduce the array to a single value
+$total = array_reduce($numbers, 'sum');
+// Output the result
+echo $total; // Output: 15 (1 + 2 + 3 + 4 + 5)
+```
+***
+**Array Sorting Function **
+![Screenshot (327)](https://github.com/amandavid0032/Web-Development/assets/86879390/05a10c5b-00db-4a8d-9b3e-f51d89bc414c)
+***
+**Array traversing functions** in PHP are used to iterate over the elements of an array and perform specific operations on each element. 
+![Screenshot (328)](https://github.com/amandavid0032/Web-Development/assets/86879390/1836aa9c-48c8-4db1-9c96-ddd3cdf07966)
+***
+**Array_Range Function**
+In PHP, the range() function is used to create an array containing a range of elements its like a loop to print number or element from 1 to 10
+`syntax range(start, end, step);`
+```php
+$numbers = range(1, 5);
+print_r($numbers); // Output: [1, 2, 3, 4, 5]
+```
+```php
+$numbers = range(0, 10, 2);
+print_r($numbers); // Output: [0, 2, 4, 6, 8, 10]
+```
+```php
+$letters = range('a', 'e');
+print_r($letters); // Output: ['a', 'b', 'c', 'd', 'e']
+```
 ---
-
+## 📘 String Function
+**explode():** This function is used to split a string into an array of substrings based on a specified delimiter.
+```php
+$string = "apple,banana,orange,grape";
+$fruits = explode(",", $string);
+print_r($fruits); // Output: ['apple', 'banana', 'orange', 'grape']
+```
+***
+**implode():** This function is used to join elements of an array into a string using a specified glue string. It is the opposite of explode(). T
+```php
+$fruits = ['apple', 'banana', 'orange', 'grape'];
+$string = implode(", ", $fruits);
+echo $string; // Output: "apple, banana, orange, grape"
+```
+***
+**str_split():**This function splits a string into an array of its individual characters. Each character becomes an element in the resulting array.
+`syntax str_split(string, length);`
+```php
+$string = "Hello";
+$characters = str_split($string);
+print_r($characters); // Output: ['H', 'e', 'l', 'l', 'o']
+```
+***
+**chunk_split():** This function splits a string into a series of smaller chunks and inserts a delimiter between each chunk.
+`syntax chunk_split(string, length, delimiter);`
+```php
+$string = "1234567890";
+$chunkedString = chunk_split($string, 2, "-");
+echo $chunkedString; // Output: "12-34-56-78-90"
+```
+***
+****
+---
 ## 📘 Htmlentities
 * PHP function used for converting special characters to their HTML entities. This is particularly useful when you want to display user-input data on a 
   webpage and avoid potential security And Protect From the hacker they can't use Sql injection on this such as Cross-Site Scripting (XSS).By converting special characters to their HTML entities<br/>
