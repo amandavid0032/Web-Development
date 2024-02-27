@@ -279,6 +279,7 @@ if ($key !== false) {
 ***
 
 **Array_replace & Array_replace_recursive**
+
 ![Screenshot (326)](https://github.com/amandavid0032/Web-Development/assets/86879390/9beaadff-94fd-4e9c-88bc-a7554edc879c)
 ***
 **Array_replace**
@@ -388,6 +389,7 @@ print_r($removed); // Output: Array ( [0] => c )
 ```
 ***
 **Array Key Function**
+
 **Array_key:**
 This function returns all the keys of an array or the subset of keys of an array that match a specified value.
 ```php
@@ -626,7 +628,8 @@ $total = array_reduce($numbers, 'sum');
 echo $total; // Output: 15 (1 + 2 + 3 + 4 + 5)
 ```
 ***
-**Array Sorting Function **
+
+**Array Sorting Function**
 ![Screenshot (327)](https://github.com/amandavid0032/Web-Development/assets/86879390/05a10c5b-00db-4a8d-9b3e-f51d89bc414c)
 ***
 **Array traversing functions** in PHP are used to iterate over the elements of an array and perform specific operations on each element. 
@@ -663,7 +666,7 @@ $string = implode(", ", $fruits);
 echo $string; // Output: "apple, banana, orange, grape"
 ```
 ***
-**str_split():**This function splits a string into an array of its individual characters. Each character becomes an element in the resulting array.
+**str_split():** This function splits a string into an array of its individual characters. Each character becomes an element in the resulting array.
 `syntax str_split(string, length);`
 ```php
 $string = "Hello";
@@ -679,7 +682,10 @@ $chunkedString = chunk_split($string, 2, "-");
 echo $chunkedString; // Output: "12-34-56-78-90"
 ```
 ***
-****
+**String LowerCase & UpperCase**
+![Screenshot (330)](https://github.com/amandavid0032/Web-Development/assets/86879390/e692c6b8-5563-425f-ae59-2a07b9427b52)
+***
+
 ---
 ## 📘 Htmlentities
 * PHP function used for converting special characters to their HTML entities. This is particularly useful when you want to display user-input data on a 
