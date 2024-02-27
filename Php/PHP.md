@@ -685,6 +685,7 @@ echo $chunkedString; // Output: "12-34-56-78-90"
 **String LowerCase & UpperCase**
 ![Screenshot (330)](https://github.com/amandavid0032/Web-Development/assets/86879390/e692c6b8-5563-425f-ae59-2a07b9427b52)
 ***
+**Strlen**
 
 ---
 ## 📘 Htmlentities
