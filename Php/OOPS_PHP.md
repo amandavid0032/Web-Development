@@ -191,7 +191,8 @@ echo $tv->volume;   //Output 2;
 
 1. Extends : means we can edit the parent function which is extend in the child class , so basically parent class has function that function 
 ---
-## 📘 Access Modifier
+## 📘 Encapsulation && Access Modifier
+Encapsulation is a fundamental concept in Object-Oriented Programming (OOP) that bundles the data (properties) and the methods (functions) that operate on the data into a single unit, called a class. It also restricts direct access to some of the object's components, which can help prevent accidental interference and misuse. In PHP, encapsulation is achieved using access modifiers: public, private, and protected.
 Properties and methods can have access modifiers which control where they can be accessed.
 
 **There are three access modifiers:**
@@ -206,6 +207,7 @@ Properties and methods can have access modifiers which control where they can be
 ![Screenshot (297)](https://github.com/amandavid0032/Web-Development/assets/86879390/1dede7da-b2b2-4c1d-8e1b-85b378e6a685)
 
 ***
+**Public Method**
 ```php
 //Public Method 
 
@@ -226,6 +228,7 @@ $test->name="David";  // Overrides the value of the 'name' property with "David"
 $test->show(); 
 ```
 ***
+**Protected Method**
 ```Php
 
 class base{
@@ -245,6 +248,7 @@ $test->name="David";  //Fatal error: Uncaught Error: Cannot access protected pro
 $test->show(); 
 ```
 ***
+**Protected**
 ```php
 //Protected
 class base{
@@ -263,6 +267,7 @@ $test = new base("Aman Kondal"); // Instantiates an object of the 'base' class w
 $test->show(); 
 ```
 ***
+**Protected**
 ```Php
 // Protected
 class base{
@@ -286,6 +291,7 @@ $test->get();
 
 ```
 ***
+**Private**
 ```php
 // Private
 class base{
