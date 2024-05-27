@@ -152,6 +152,31 @@ $el->info();
 $em=new mangaer("David",24,20000);
 $em->info();
 ```
+---
+```Php
+
+class TV{
+Public $Model=123;
+    public $volume=0;
+    function Volumeup(){
+      $this->volume++;
+    }
+function  VolumeDown(){
+    $this->volume--;
+}
+function __construct($a,$b){
+    $this->Model=$a;
+    $this->volume=$b;
+}
+
+}
+class LG extends TV{
+ public $time=true;
+}
+$tv=new LG('abc',2);
+echo $tv->Model;    //Output abc;
+echo $tv->volume;   //Output 2;
+```
 **types of in heritence** 
 
 1. Single 
