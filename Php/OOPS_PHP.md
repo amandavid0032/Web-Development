@@ -428,6 +428,7 @@ echo $obj->getData();  //Hello Teacher
 
 interface parent1{
 protected $a //Output Interfaces may not include memeber variable 
+Proteted or private function calu($a,$b); //Fatal error: Access type for interface method parent1::calu() must be public 
 function calu($a,$b);
 }
 interface parent2{
