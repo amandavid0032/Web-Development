@@ -427,7 +427,8 @@ echo $obj->getData();  //Hello Teacher
 ```Php
 
 interface parent1{
-  function calu($a,$b);
+protected $a //Output Interfaces may not include memeber variable 
+function calu($a,$b);
 }
 interface parent2{
   function sub($c,$d);
