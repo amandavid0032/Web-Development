@@ -31,3 +31,20 @@ Route::view('/hello', 'login');
 php artisan route:list  //this command give the list of all the route
 php artisan route:list --except-vendor //this command give the route which we made 
 ```
+**Group Routes**
+```php
+
+Route::prefix('page')->group(function(){
+    Route::view('/singup', 'login');
+    Route::view('/welcome', 'welcome');
+    // Route::view('/singup', 'login');
+});
+//just know write page/signup its is common routes
+```
+**fallback**
+```php
+
+Route::fallback(function(){
+return "<h1>page dont found</h1>";
+}); //it return me page dont find if there is no page or routes
+```
