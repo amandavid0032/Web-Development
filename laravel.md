@@ -48,3 +48,8 @@ Route::fallback(function(){
 return "<h1>page dont found</h1>";
 }); //it return me page dont find if there is no page or routes
 ```
+---
+## 📘 What is Blade Template
+Laravel Blade is a powerful templating engine provided with Laravel, a popular PHP framework. Blade allows you to use plain PHP code in your templates, and it also provides its own control structures, such as conditional statements and loops, which are internally mapped to their PHP counterparts.
+![Screenshot (386)](https://github.com/amandavid0032/Web-Development/assets/86879390/633a3e35-8d96-4ef6-add3-ff03b1886b0f)
+
