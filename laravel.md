@@ -59,3 +59,5 @@ Database migrations in Laravel provide a way to manage and version your database
 
 **Important Point**:When ever i create table from migration it will automatically add `s` in the last of the table name for example: user->`users`, task->`taskes`
 
+
+
