@@ -59,5 +59,26 @@ Database migrations in Laravel provide a way to manage and version your database
 
 **Important Point**:When ever i create table from migration it will automatically add `s` in the last of the table name for example: user->`users`, task->`taskes`
 
+---
+
+## 📘 Query Bulider
+There are 2 types of Query Builder
+
+![Screenshot (425)](https://github.com/user-attachments/assets/d0d2f12c-0e6d-4313-bdac-77aace7bdf8d)
+
+
+![Screenshot (426)](https://github.com/user-attachments/assets/7b899a28-e7c2-4732-a439-f327ee505251)
+
+There is Error if the inbuilt file Delete `session table not exist like that 1401 `
+
+```php
+ public function showUser(){
+        $user=DB::table('students')->get();
+        return $user;
+    }    // This funcation return all the result from the table students  get method 
+```
+
+
+
 
 
