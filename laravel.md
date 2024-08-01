@@ -56,12 +56,17 @@ Laravel Blade is a powerful templating engine provided with Laravel, a popular P
 ---
 ## 📘 Database Migration
 Database migrations in Laravel provide a way to manage and version your database schema. They allow you to create, modify, and share database structures across different environments and among team members. Migrations are like version control for your database, ensuring that you can easily apply changes and rollback if necessary
+`php artisan migrate`
 
-**Important Point**:When ever i create table from migration it will automatically add `s` in the last of the table name for example: user->`users`, task->`taskes`
+**Important Point**
+Remember the following:
+1. When I create a table using migration, it automatically adds an `s` at the end of the table name. For example: user -> `users`, task -> `tasks`.
+2. Never delete session files as it will result in an error.
+3. Whenever I update a table by adding a new field to the existing database table, I need to create a new migration file for the same table and then run it using create `php artisan make:migration add_fields_to_students_table --table=students`.then run migrate file 
 
 ---
 
-## 📘 Query Bulider
+## 📘 Query Builder
 There are 2 types of Query Builder
 
 ![Screenshot (425)](https://github.com/user-attachments/assets/d0d2f12c-0e6d-4313-bdac-77aace7bdf8d)
@@ -75,7 +80,7 @@ There is an Error if the inbuilt file Delete `session table does not exist like 
  public function showUser(){
         $user=DB::table('students')->get();
         return $user;
-    }    // This funcation return all the result from the table students  get method
+    }    // This function return all the results from the table students  get method
 
 ```
 
@@ -89,7 +94,15 @@ oderBy('Name','asc');
 
 ---
 
-## 
+**Insert Query**
+1. Important Point
+`@csrf` is a return Token
+
+"_token":"LqKQb01ECKTY0KzLjvrbvnp81Dc0HgKUWq0uC7oW"
+
+This is very important point if this is not used it shows the page hasn't been found so use this if any insert query run
+
+---
 
 
 
