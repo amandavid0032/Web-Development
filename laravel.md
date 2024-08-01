@@ -69,14 +69,27 @@ There are 2 types of Query Builder
 
 ![Screenshot (426)](https://github.com/user-attachments/assets/7b899a28-e7c2-4732-a439-f327ee505251)
 
-There is Error if the inbuilt file Delete `session table not exist like that 1401 `
+There is an Error if the inbuilt file Delete `session table does not exist like that 1401 `
 
 ```php
  public function showUser(){
         $user=DB::table('students')->get();
         return $user;
-    }    // This funcation return all the result from the table students  get method 
+    }    // This funcation return all the result from the table students  get method
+
 ```
+
+For the Feath Data, there are so many way 
+
+```php
+Where('id',$id);
+
+oderBy('Name','asc');
+```
+
+---
+
+## 
 
 
 
