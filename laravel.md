@@ -84,6 +84,11 @@ There is an Error if the inbuilt file Delete `session table does not exist like 
 
 ```
 
+**Most Important Point** ==> Why we use query Bulider
+1. IT protects Your Application From Sql Injection Attacks By using PDO Parameter Binding
+2. IT works with all of laravel's Supported Database System Such as Mysql, Sql lite,MangoDb
+
+
 For the Feath Data, there are so many way 
 
 ```php
@@ -100,7 +105,7 @@ oderBy('Name','asc');
 
 "_token":"LqKQb01ECKTY0KzLjvrbvnp81Dc0HgKUWq0uC7oW"
 
-This is very important point if this is not used it shows the page hasn't been found so use this if any insert query run
+This is very important point if this is not used it shows the page hasn't been found so use this if any insert query run or on update
 
 ---
 
