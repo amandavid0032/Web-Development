@@ -66,6 +66,10 @@ Remember the following:
 
 ---
 
+## 📘 Controller
+![Screenshot (449)](https://github.com/user-attachments/assets/28fa409a-e3f2-413e-8cd8-901a5a987851)
+
+
 ## 📘 Query Builder
 There are 2 types of Query Builder
 
