@@ -122,10 +122,33 @@ This is a critical point if this is not used it shows the page hasn't been found
 1. **Paginate()**=>This is the most common method used in Laravel for using pagination
   `DB::table('users')->paginate();   //In Query this use in model 
   {{ $data->links() }}             //In Blade template`
-   
-2. **simplePaginate()**=>Same method as paginate just one different see in the photo and its default value is `15` per page record 
+```php
+public static function getUsers()
+    {
+        $user = DB::table('user')->orderBy('uid')->Paginate(4);
+        return $user;
+    }
+// use this class if dont use and give and error 
+public function boot(): void
+    {
+        Paginator::useBootstrapFive();
+        // Paginator::useBootstrapFour();
 
-3. **CursorPaginate()**=>1.It is used in large data sets and is faster with both methods because it works on indexing. Indexing the database cashing  columns will make the table faster, but it is not the most used.
+    }
+```
+   ![Screenshot (453)](https://github.com/user-attachments/assets/383445e9-876c-4c37-97d6-9feb09138a21)
+![Screenshot (452)](https://github.com/user-attachments/assets/6980ec4d-aaa6-481a-b386-d0170addd626)
+
+3. **simplePaginate()**=>Same method as paginate just one different see in the photo and its default value is `15` per page record 
+```php
+
+public static function getUsers()
+    {
+        $user = DB::table('user')->orderBy('uid')->simplePaginate(4);
+        return $user;
+    }
+```
+4. **CursorPaginate()**=>1.It is used in large data sets and is faster with both methods because it works on indexing. Indexing the database cashing  columns will make the table faster, but it is not the most used.
    
 **DissAdvantage**1.use Server Resource most and it will affect on other Processing on speed for `example it uses ram and memory and create cashing`
 
