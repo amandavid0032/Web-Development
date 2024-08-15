@@ -105,15 +105,31 @@ oderBy('Name','asc');
 
 **Insert Query**
 1. Important Point
-`@csrf` is a return Token
+**`@csrf`** is a return Token
 
+```php
 "_token":"LqKQb01ECKTY0KzLjvrbvnp81Dc0HgKUWq0uC7oW"
-
-This is very important point if this is not used it shows the page hasn't been found so use this if any insert query run or on update
+```
+This is a critical point if this is not used it shows the page hasn't been found so use this if any insert query runs or on an update
 
 ---
 
+## 📘 Query Builder With Pagination
+![Screenshot (450)](https://github.com/user-attachments/assets/90a9dadb-1c7b-453e-b4a3-98cc49ff7dba)
+  
+**There are Three Methods**
 
+1. **Paginate()**=>This is the most common method used in Laravel for using pagination
+  `DB::table('users')->paginate();   //In Query this use in model 
+  {{ $data->links() }}             //In Blade template`
+   
+2. **simplePaginate()**=>Same method as paginate just one different see in the photo and its default value is `15` per page record 
+
+3. **CursorPaginate()**=>1.It is used in large data sets and is faster with both methods because it works on indexing. Indexing the database cashing  columns will make the table faster, but it is not the most used.
+   
+**DissAdvantage**1.use Server Resource most and it will affect on other Processing on speed for `example it uses ram and memory and create cashing`
+
+2.No Numberig On the pagination 
 
 
 
