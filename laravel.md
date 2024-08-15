@@ -62,13 +62,44 @@ Database migrations in Laravel provide a way to manage and version your database
 Remember the following:
 1. When I create a table using migration, it automatically adds an `s` at the end of the table name. For example: user -> `users`, task -> `tasks`.
 2. Never delete session files as it will result in an error.
-3. Whenever I update a table by adding a new field to the existing database table, I need to create a new migration file for the same table and then run it using create `php artisan make:migration add_fields_to_students_table --table=students`.then run migrate file 
+3. Whenever I update a table by adding a new field to the existing database table, I need to create a new migration file for the same table and then run it using create `php artisan make: migration add_fields_to_students_table --table=students`.then run the migrate file 
 
 ---
 
 ## 📘 Controller
 ![Screenshot (449)](https://github.com/user-attachments/assets/28fa409a-e3f2-413e-8cd8-901a5a987851)
 
+---
+
+## 📘 How to see the page and continue count
+```php
+ @php $Sno = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+            @forelse ($data as $user)
+                <tr>
+                    <td>{{ $Sno }}</td>
+                    <td>{{ $user->f_name }} {{ $user->l_name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->phone }}</td>
+                    <td>{{ $user->gender }}</td>
+                    <td>
+                        <a href="{{ route('view.user', $user->uid) }}" class='btn btn-info'>View</a>
+                        <button type='button' class='btn btn-danger'data-id='{{ $user->uid }}'>Delete</button>
+                    </td>
+                </tr>
+                @php $Sno++ @endphp
+            @empty
+                <tr>
+                    <td colspan="6">
+                        <h2>No Records Found</h2>
+                    </td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
+    <div class="mt-5">{{ $data->links() }}</div>
+```
+
+---
 
 ## 📘 Query Builder
 There are 2 types of Query Builder
@@ -84,16 +115,16 @@ There is an Error if the inbuilt file Delete `session table does not exist like 
  public function showUser(){
         $user=DB::table('students')->get();
         return $user;
-    }    // This function return all the results from the table students  get method
+    }    // This function returns all the results from the table students  get method
 
 ```
 
-**Most Important Point** ==> Why we use query Bulider
-1. IT protects Your Application From Sql Injection Attacks By using PDO Parameter Binding
-2. IT works with all of laravel's Supported Database System Such as Mysql, Sql lite,MangoDb
+**Most Important Point** ==> Why we use query Builder
+1. IT protects Your Application From SQL Injection Attacks By using PDO Parameter Binding
+2. IT works with all of Laravel's Supported Database systems such as Mysql, SQL lite, MangoDb
 
 
-For the Feath Data, there are so many way 
+For the Feath Data, there are so many ways 
 
 ```php
 Where('id',$id);
@@ -128,7 +159,7 @@ public static function getUsers()
         $user = DB::table('user')->orderBy('uid')->Paginate(4);
         return $user;
     }
-// use this class if dont use and give and error 
+//Use this class if don't use it and give an error 
 public function boot(): void
     {
         Paginator::useBootstrapFive();
@@ -136,7 +167,7 @@ public function boot(): void
 
     }
 ```
-   ![Screenshot (453)](https://github.com/user-attachments/assets/383445e9-876c-4c37-97d6-9feb09138a21)
+![Screenshot (453)](https://github.com/user-attachments/assets/383445e9-876c-4c37-97d6-9feb09138a21)
 ![Screenshot (452)](https://github.com/user-attachments/assets/6980ec4d-aaa6-481a-b386-d0170addd626)
 
 3. **simplePaginate()**=>Same method as paginate just one different see in the photo and its default value is `15` per page record 
