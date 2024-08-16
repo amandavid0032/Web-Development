@@ -185,6 +185,35 @@ public static function getUsers()
 
 2.No Numberig On the pagination 
 
+## 📘 Validation in Laravel
+Benefits of the validation hacker Don't Bypass The layer Meaning hacker Don't hake Easily
+```php
+ <spam class="text-danger">@error('gender'){{ $message }}@enderror</spam>  //See Error in the blade template
+ public function addNewUser(Request $req)
+    {
+        $req->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'fathername' => 'required',
+            'mothername' => 'required',
+            'gender' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|alpha_num|min:8',
+            'confirm_password' => 'required|same:password',
+            'role' => 'required | numeric',
+            'street' => 'required',
+            'additional_info' => 'required',
+            'zip_code' => 'required |numeric',
+            'place' => 'required',
+            'country' => 'required',
+            'code' => 'required | numeric',
+            'phone_number' => 'required |numeric',
+        ]);
+        return $req->all();
+    }
+```
+
+
 
 
 
