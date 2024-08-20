@@ -213,6 +213,14 @@ Benefits of the validation hacker Don't Bypass The layer Meaning hacker Don't ha
     }
 ```
 
+**Custon Validation**
+![Screenshot (458)](https://github.com/user-attachments/assets/4231978c-0f1d-49f5-a4a1-d55190440c59)
+
+**Pending This work**
+
+---
+
+
 
 
 
