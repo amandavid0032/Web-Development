@@ -1,7 +1,7 @@
 ## 📔 Laravel 
 
 ## 📘 what is laravel
-Laravel is a popular open-source PHP web framework used for building modern, dynamic web applications. It follows the MVC (Model-View-Controller) architectural pattern, which promotes separation of concerns and enhances code organization, making development more efficient and maintainable.
+Laravel is a popular open-source PHP web framework used for building modern, dynamic web applications. It follows the MVC (Model-View-Controller) architectural pattern, which promotes the separation of concerns and enhances code organization, making development more efficient and maintainable.
 
 ---
 
@@ -227,7 +227,37 @@ Resource controller is the method which is used for creating curd operation most
 this command will create a model and controller at the same time and resource create a function example-->insert, show, delete;
 ![Screenshot (462)](https://github.com/user-attachments/assets/6c39f4aa-0ea1-465c-a3f0-af3de8423245)
 
-in the image u can see how the resource controller will work in the route it can only be used in action with the name of the data which i want to pass on it 
+in the image u can see how the resource controller will work in the route it can only be used in action with the name of the data that I want to pass on it 
+
+## 📘 Eloquent ORM Query (ORM object )
+
+![Screenshot (460)](https://github.com/user-attachments/assets/e6b6a3e0-528b-4b55-b595-0d14cc720210)
+
+**Eloquent ORM Supported Database** 
+
+1.MySQL
+
+2.SQL Server 
+
+3.SQLite 
+
+4.PostgreSQL
+
+**What is Eloquent**
+so Eloquent is a way to connect or fetch the data from the database with straight commands and simple  because it syntax is easy 
+
+
+**Read Data**
+```php
+use App\Models\user;
+
+    public function index()
+    {
+        $user = user::all();
+        return $user;
+    }   // it will fetch the data from the users table
+```
+
 
 
 
