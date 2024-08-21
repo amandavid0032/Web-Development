@@ -225,8 +225,9 @@ Resource controller is the method which is used for creating curd operation most
 
 `php artisan make: model user --controller --resource`
 this command will create a model and controller at the same time and resource create a function example-->insert, show, delete;
+![Screenshot (462)](https://github.com/user-attachments/assets/6c39f4aa-0ea1-465c-a3f0-af3de8423245)
 
-
+in the image u can see how the resource controller will work in the route it can only be used in action with the name of the data which i want to pass on it 
 
 
 
