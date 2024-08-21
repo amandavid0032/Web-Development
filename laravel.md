@@ -213,13 +213,18 @@ Benefits of the validation hacker Don't Bypass The layer Meaning hacker Don't ha
     }
 ```
 
-**Custon Validation**
+**Custom Validation**
 ![Screenshot (458)](https://github.com/user-attachments/assets/4231978c-0f1d-49f5-a4a1-d55190440c59)
 
 **Pending This work**
 
 ---
 
+## 📘 Resource Controller 
+Resource controller is the method which is used for creating curd operation most of the time because it will create functions like add, insert, update
+
+`php artisan make: model user --controller --resource`
+this command will create a model and controller at the same time and resource create a function example-->insert, show, delete;
 
 
 
