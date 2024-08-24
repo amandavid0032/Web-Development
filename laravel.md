@@ -264,5 +264,6 @@ In Laravel there are 2 folders where images can be uploaded
 There are 2 differences in storing an image or file in a folder.
 1. If an image is saved in the app folder, it cannot be read because it is a locked folder that only stores important information.
 2. There is no need to give a name or anything of the image I mean name so the image method automatically converts the name of the image
-3. 
 
+**Method to store images**
+![Screenshot (467)](https://github.com/user-attachments/assets/122a15c0-0c80-4041-8ce4-c3750395dc12)
