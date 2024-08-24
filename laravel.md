@@ -267,3 +267,21 @@ There are 2 differences in storing an image or file in a folder.
 
 **Method to store images**
 ![Screenshot (467)](https://github.com/user-attachments/assets/122a15c0-0c80-4041-8ce4-c3750395dc12)
+
+**store Method**
+```php
+  $file=$req->file('image');
+        $req->validate(['image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+       $path=$req->file('image')->store('image','public');
+        return $path;
+```
+**storeAs Method**
+```php
+   $file=$req->file('image');
+        $req->validate(['image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $filename=$file->getClientOriginalName();
+        $path=$file->storeAs('image',$filename,'public');
+        return $path;
+```
