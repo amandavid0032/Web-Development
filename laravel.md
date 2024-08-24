@@ -281,7 +281,16 @@ There are 2 differences in storing an image or file in a folder.
    $file=$req->file('image');
         $req->validate(['image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $filename=$file->getClientOriginalName();
+        $filename=$file->getClientOriginalName();                      // This methoda store image as it real name
+        $filename=time().'_'.$file->getClientOriginalName();           // This method adds the time of the image on what time it will add 
         $path=$file->storeAs('image',$filename,'public');
         return $path;
 ```
+**Important Point**
+Whenever we want to see the image first we need to connect the storage file because the image doesn't see then 
+
+`php artisan storage:link`
+
+
+
+
