@@ -255,9 +255,14 @@ use App\Models\user;
     {
         $user = user::all();
         return $user;
-    }   // it will fetch the data from the users table
+    }   //It will fetch the data from the users table
 ```
 
-
-
+## 📘 Image & File Upload 
+In Laravel there are 2 folders where images can be uploaded
+![Screenshot (466)](https://github.com/user-attachments/assets/e7139818-d69c-4c7f-90cb-a519d4fb9226)
+There are 2 differences in storing an image or file in a folder.
+1. If an image is saved in the app folder, it cannot be read because it is a locked folder that only stores important information.
+2. There is no need to give a name or anything of the image I mean name so the image method automatically converts the name of the image
+3. 
 
