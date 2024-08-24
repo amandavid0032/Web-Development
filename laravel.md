@@ -291,6 +291,7 @@ Whenever we want to see the image first we need to connect the storage file beca
 
 `php artisan storage:link`
 
+Storage folder add in this when this command runs   
 
 
 
