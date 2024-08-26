@@ -309,8 +309,13 @@ Middleware acts as a bridge between a request and a response and can modify or h
 **Type of Middleware**
 
 1. Route Middleware
-2. Middleware Gropus
+2. Middleware Groups
 3. Global  Middleware
+
+Add Middleware in the Route 
+
+`Route::get('/user/{id}', [userController::class, 'singleUser'])->name('view.user')->middleware(validUser::class);`
+
 
    
 
