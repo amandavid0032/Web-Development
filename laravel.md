@@ -293,5 +293,18 @@ Whenever we want to see the image first we need to connect the storage file beca
 
 Storage folder add in this when this command runs   
 
+---
+## 📘 Laravel Middleware 
+**What is Middleware** 
+
+Middleware is a type of filtering mechanism that sits between the HTTP request and the controller. It is used to perform various tasks before or after a request is processed by the application.
+
+Middleware acts as a bridge between a request and a response and can modify or handle the request and a response an can modify or handle the request before passing it to next step in the application life cycle  
+
+**Create middleware**
+
+`php artisan make:middleware ValidUser`
+
+
 
 
