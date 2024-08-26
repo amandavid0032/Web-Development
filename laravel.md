@@ -303,7 +303,15 @@ Middleware acts as a bridge between a request and a response and can modify or h
 
 **Create middleware**
 
+
 `php artisan make:middleware ValidUser`
+
+**Type of Middleware**
+
+1. Route Middleware
+2. Middleware Gropus
+3. Global  Middleware 
+
 
 
 
