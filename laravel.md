@@ -310,7 +310,9 @@ Middleware acts as a bridge between a request and a response and can modify or h
 
 1. Route Middleware
 2. Middleware Gropus
-3. Global  Middleware 
+3. Global  Middleware
+
+   
 
 
 
