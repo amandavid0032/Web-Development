@@ -299,7 +299,7 @@ Storage folder add in this when this command runs
 
 Middleware is a type of filtering mechanism that sits between the HTTP request and the controller. It is used to perform various tasks before or after a request is processed by the application.
 
-Middleware acts as a bridge between a request and a response and can modify or handle the request and a response an can modify or handle the request before passing it to next step in the application life cycle  
+Middleware acts as a bridge between a request and a response and can modify or handle the request and a response a can modify or handle the request before passing it to next step in the application life cycle  
 
 **Create middleware**
 
@@ -318,6 +318,46 @@ Add Middleware in the Route
 
 ## 📘 Laravel Store Session 
 
+A session  is a way to store information (data) across multiple requests from a user. Sessions allow you to preserve data across page loads and between requests, making it possible to remember user information, like authentication credentials, preferences, shopping cart contents, etc., throughout a user's interaction with the application.
+![Screenshot (474)](https://github.com/user-attachments/assets/e9a6a10b-e68c-46f8-a4a0-5795d4308a5b)
+```php
+ public function index()
+    {
+
+        if (session()->has('name')) {
+            $value = session()->get('name');
+            echo $value;
+        } else {
+            echo "name don't exist";
+        }
+
+
+        // $value =session()->all();
+        // echo"<pre>";
+        // print_r($value);
+        // echo"</pre>";
+        // $value = session('name');
+        // echo $value;
+    }
+
+    public function storeSession(Request $request)
+    {
+        session([
+            'name' => 'David',
+            "class" => "B.tech"
+        ]);
+        // session()->put('class', 'B.tech');
+        return redirect('/');
+    }
+
+
+
+    public function deleteSession()
+    {
+        session()->forget('name');
+        return redirect('/');
+    }
+```
 
 
    
