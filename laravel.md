@@ -316,6 +316,9 @@ Add Middleware in the Route
 
 `Route::get('/user/{id}', [userController::class, 'singleUser'])->name('view.user')->middleware(validUser::class);`
 
+## 📘 Laravel Store Session 
+
+
 
    
 
