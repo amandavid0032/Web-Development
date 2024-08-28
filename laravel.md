@@ -421,10 +421,10 @@ if(Gate::denies('isAdmin')){
 
 **Defining Gates**
 
-Gates are typically defined within the App\Providers\AuthServiceProvider class, using the Gate facade. You can define gates by using the Gate::define method.
+Gates are typically defined within the `App\Providers\AuthServiceProvider` class, using the Gate facade. You can define gates by using the Gate::define method.
 
 
-use Illuminate\Support\Facades\Gate;
+`use Illuminate\Support\Facades\Gate;`
 
 ```php
 Gate::define('update-post', function ($user, $post) {
