@@ -383,6 +383,8 @@ Route/Web.php
 
 `Route::get('/dashborad',[userController::class,'dashborad'])->middleware('can:isAdmin');`
 
+---
+
 **Blade File With Gates**
 ```php
 @if(Gate::allows(isAdmin))
@@ -395,7 +397,7 @@ Route/Web.php
 <a href="/admn-panel">Admin Panel</a>
 @endcan
 ```
-
+---
 **Controller With Gates**
 ```php
 public function dashboard(){
@@ -406,8 +408,29 @@ return redirect()->route('login');
 }
 }
 ```
+---
+**Middleware with Gates** 
+```php
+public function handle(Request $request closure $next){
+if(Gate::denies('isAdmin')){
 
-   
+}
+}
+```
+---
+
+**Defining Gates**
+
+Gates are typically defined within the App\Providers\AuthServiceProvider class, using the Gate facade. You can define gates by using the Gate::define method.
+
+
+use Illuminate\Support\Facades\Gate;
+
+```php
+Gate::define('update-post', function ($user, $post) {
+    return $user->id === $post->user_id;
+});
+```
 
 
 
