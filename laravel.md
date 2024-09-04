@@ -431,6 +431,24 @@ Gate::define('update-post', function ($user, $post) {
     return $user->id === $post->user_id;
 });
 ```
+---
+## 📘 Laravel Send Email 
+
+**Step 1**
+```php
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your_username
+MAIL_PASSWORD=your_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=your_email@example.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+``` 
+**Step 2** =>  Create a Mailable Class 
+
+`php artisan make:mail ExampleMail`  this Command create a folder in the `app Then Mail`
 
 
 
