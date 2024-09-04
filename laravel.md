@@ -450,7 +450,61 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 `php artisan make:mail ExampleMail`  this Command create a folder in the `app Then Mail`
 
+**Example of the file**=> in this file it create 4 method 
+```php
+namespace App\Mail;
 
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+
+class ExampleMail extends Mailable
+{
+    use Queueable, SerializesModels;
+
+    public $details;
+
+    /**
+     * Create a new message instance.
+     */
+    public function __construct($details)
+    {
+        $this->details = $details;
+    }
+
+    /**
+     * Build the message.
+     */
+    public function build()
+    {
+        return $this->subject('Test Email')
+                    ->view('emails.example');
+    }
+}
+
+```
+**Step 3**
+```php
+use App\Mail\ExampleMail;
+use Illuminate\Support\Facades\Mail;
+
+class MailController extends Controller
+{
+    public function sendEmail()
+    {
+        $details = [
+            'title' => 'Mail from Laravel',
+            'body' => 'This is a test email sent from Laravel.'
+        ];
+
+        Mail::to('recipient@example.com')->send(new ExampleMail($details));
+
+        return "Email Sent";
+    }
+}
+
+
+```
 
 
 
