@@ -10,54 +10,20 @@ React is a JavaScript library that allows developers to build user interfaces (U
 React is primarily used to build web applications, but it can also be used to create mobile and desktop apps, images, PDFs, and more
 
 ---
-## 📘  Props and PropTypes in React 
-In React, props (short for properties) are a way to pass data from a parent component to a child component. They enable you to make components dynamic and reusable. 
-```react
-import './App.css';
-import Navbar from './components/Navbar';
+## 📘 What is Component
+A component in React is a reusable, independent piece of UI that controls how part of the screen looks and behaves.
 
-function App() {
+Think of components like building blocks — just like LEGO pieces.
+Each component can contain:
 
-  return (
-    <>
- <Navbar title="ReactLearning"/>
-  </>
-  );
-}
+1.HTML (JSX)
+2.CSS
+3.JavaScript logic (state, functions)
+4.Props (input values)
+5.Lifecycle methods (component mount, update, unmount)
 
-export default App;
+## 📘 Types of Components in React
 
-```
+1.Functional Components
+2.Class Components
 
-```react
-import React from 'react'
-import PropTypes from 'prop-types'
-
-export default function Navbar(props) {
-  return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-    <div className="container-fluid">
-      <a className="navbar-brand" href="/">{props.title}</a>
-// many more code
-</div>
-    </div>
-  </nav>
-  )
-}
- 
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired
-}
-```
-**PropTypes**  In this it only accpet String type this is call propTypes
-```react
-
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired
-}
-
-
-Navbar.defaultProps = {
-  title: 'My Website'
-}
-```
